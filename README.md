@@ -1,5 +1,5 @@
 # Plex-Recorded-Video-Converter
-The HDHomeRun Prime records .TS video files. This project finds those files and converts them to .MP4
+The HDHomeRun Prime records .TS video files. This project finds those files and converts them to .MP4. My "Plex Recorded TV Shows" library that stores these .TS files is a different library than my "TV Shows" library that I share. 
 
 
 Edit the VBS source and set the paths where the script will find your files.
