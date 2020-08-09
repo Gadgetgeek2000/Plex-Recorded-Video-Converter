@@ -3,6 +3,8 @@ The HDHomeRun Prime records .TS video files. This project finds those files and 
 
 This project uses Handbrake and the Handbrake CLI command line interface. Edit the VBS source and set the paths where the script will find your files.
 
+I set this script to run as a scheduled task on a few computers around the house and keep the video conversion work away from the Plex server. Schedule the task when the computers are on but not used. Conversion can eat up all the CPU of the server. Handbrake does have an NVIDIA GPU option that makes quick work of video conversion. I haven't tried that yet with this setup.
+
 Folder to search for recorded shows:
 CONST SOURCE_MEDIA_FOLDER = "\\homepvr\d$\Plex Recorded TV\"
 
