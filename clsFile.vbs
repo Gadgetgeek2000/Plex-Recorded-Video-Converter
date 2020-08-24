@@ -208,13 +208,13 @@ Class File
     Public Property Get attributes()
         '-1 - Doesn't exist
         '0 - Normal
-        '1 - ReadOnly   (bit 1)
+        '1 - ReadOnlyÂ  Â (bit 1)
         '2 - Hidden (bit 2)
         '4 - System (bit 3)
         '8 - Volume (bit 4)
         '16 - Directory (bit 5)
-        '32 - Archive   (bit 6)
-        '1024 - Alias   (bit 9)
+        '32 - ArchiveÂ  Â (bit 6)
+        '1024 - AliasÂ  Â (bit 9)
         '2048 - Compressed (bit 10)
         If Me.exists Then
             Dim objFS, objFile
@@ -288,11 +288,12 @@ Class File
         If Me.exists Then
             Dim objFS, objFile
             Set objFS = CreateObject("Scripting.FileSystemObject")
-            Set objFile = objFS.GetFile(strFileName)
             On Error Resume Next
-            objFile.name = strNewName
-            strFileName = objFile.path
-            If Err = 0 Then rename = True
+            objFS.movefile strFileName, strNewName
+            If Err = 0 Then 
+		rename = True
+		strFileName = objFile.path
+            end if
             On Error GoTo 0
         End If
     End Function
@@ -364,8 +365,8 @@ Class File
 		strToFormat = replace(strToFormat, "*", "")
 		strToFormat = replace(strToFormat, "?", "")
 		strToFormat = replace(strToFormat, "|", "")
-		strToFormat = replace(strToFormat, "“", "'")
-		strToFormat = replace(strToFormat, "”", "'")
+		strToFormat = replace(strToFormat, "Â“", "'")
+		strToFormat = replace(strToFormat, "Â”", "'")
 		strToFormat = replace(strToFormat, """", "'")
 		strToFormat = replace(strToFormat, "<", "(")
 		strToFormat = replace(strToFormat, ">", ")")
