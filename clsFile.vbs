@@ -286,13 +286,13 @@ Class File
     Public Function rename(ByVal strNewName)
         rename = False
         If Me.exists Then
-            Dim objFS, objFile
+            Dim objFS
             Set objFS = CreateObject("Scripting.FileSystemObject")
             On Error Resume Next
             objFS.movefile strFileName, strNewName
             If Err = 0 Then 
 		rename = True
-		strFileName = objFile.path
+		strFileName = strNewName
             end if
             On Error GoTo 0
         End If
